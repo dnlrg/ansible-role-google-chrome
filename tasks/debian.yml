@@ -1,0 +1,21 @@
+---
+- name: Google APT repo key added
+  apt_key:
+    url: https://dl.google.com/linux/linux_signing_key.pub
+    state: present
+  become: yes
+  tags:
+    - google-chrome
+    - apt-repos
+    - repos
+
+- name: Google Chrome APT repo added
+  apt_repository:
+    repo: "deb [arch={{ google_chrome_arches[ansible_architecture] }}] http://dl.google.com/linux/chrome/deb/ stable main"
+    filename: google-chrome
+    state: present
+  become: yes
+  tags:
+    - google-chrome
+    - apt-repos
+    - repos
