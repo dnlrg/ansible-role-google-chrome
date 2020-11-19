@@ -15,6 +15,6 @@ jobs:
       - name: Lint Ansible Role
         uses: ansible/ansible-lint-action@master
         with:
-          targets: ""
+          targets: "."
           args: |
             --exclude .github/
