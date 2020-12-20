@@ -3,8 +3,8 @@
   yum_repository:
     name: google-chrome
     description: Google Chrome
-    baseurl: "http://dl.google.com/linux/chrome/rpm/stable/{{ ansible_architecture }}"
-    gpgkey: https://dl.google.com/linux/linux_signing_key.pub
+    baseurl: "{{ google_chrome_rpm_repo }}"
+    gpgkey: "{{ google_chrome_gpgkey }}"
     state: present
   become: yes
   tags:
