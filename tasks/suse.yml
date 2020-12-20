@@ -1,0 +1,16 @@
+---
+- name: Google RPM repo key added
+  rpm_key:
+    key: "{{ google_chrome_gpgkey }}"
+    state: present
+  become: yes
+
+- name: Google Chrome Zypper repo added
+  zypper_repository:
+    repo: "{{ google_chrome_rpm_repo }}"
+    name: google-chrome
+    description: Google Chrome
+    state: present
+    runrefresh: yes
+    auto_import_keys: yes
+  become: yes
