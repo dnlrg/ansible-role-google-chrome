@@ -1,3 +1,4 @@
 ---
-google_chrome_rpm_repo: "http://dl.google.com/linux/chrome/rpm/stable/x86_64"
+google_chrome_base_url: https://dl.google.com/linux/chrome
+google_chrome_rpm_repo: "{{ google_chrome_base_url }}/rpm/stable/x86_64"
 google_chrome_gpgkey: https://dl.google.com/linux/linux_signing_key.pub
